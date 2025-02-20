@@ -44,8 +44,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            modelPanel = new System.Windows.Forms.Panel();
+            label6 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             label3 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -53,10 +55,10 @@
             treeView1 = new System.Windows.Forms.TreeView();
             addEquipPanel = new System.Windows.Forms.Panel();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            label5 = new System.Windows.Forms.Label();
+            orderNumLabel = new System.Windows.Forms.Label();
             startOrderButton = new System.Windows.Forms.Button();
-            OrderlistBox = new System.Windows.Forms.ListBox();
             StatusTextBox = new System.Windows.Forms.TextBox();
+            OrderlistBox = new System.Windows.Forms.ListBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -68,7 +70,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 1);
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 2);
-            tableLayoutPanel1.Controls.Add(label5, 0, 0);
+            tableLayoutPanel1.Controls.Add(orderNumLabel, 0, 0);
             tableLayoutPanel1.Controls.Add(startOrderButton, 1, 2);
             tableLayoutPanel1.Controls.Add(OrderlistBox, 1, 1);
             tableLayoutPanel1.Controls.Add(StatusTextBox, 1, 0);
@@ -84,19 +86,22 @@
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 4;
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel2.ColumnCount = 5;
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            tableLayoutPanel2.Controls.Add(modelPanel, 3, 1);
+            tableLayoutPanel2.Controls.Add(label6, 3, 0);
+            tableLayoutPanel2.Controls.Add(label4, 4, 0);
             tableLayoutPanel2.Controls.Add(checkedListBox2, 2, 1);
-            tableLayoutPanel2.Controls.Add(label4, 3, 0);
             tableLayoutPanel2.Controls.Add(label3, 2, 0);
             tableLayoutPanel2.Controls.Add(label1, 1, 0);
             tableLayoutPanel2.Controls.Add(label2, 0, 0);
             tableLayoutPanel2.Controls.Add(checkedListBox1, 0, 1);
             tableLayoutPanel2.Controls.Add(treeView1, 1, 1);
-            tableLayoutPanel2.Controls.Add(addEquipPanel, 3, 1);
+            tableLayoutPanel2.Controls.Add(addEquipPanel, 4, 1);
             tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             tableLayoutPanel2.Location = new System.Drawing.Point(3, 59);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -106,6 +111,37 @@
             tableLayoutPanel2.Size = new System.Drawing.Size(624, 338);
             tableLayoutPanel2.TabIndex = 1;
             // 
+            // modelPanel
+            // 
+            modelPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            modelPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            modelPanel.Location = new System.Drawing.Point(375, 42);
+            modelPanel.Name = "modelPanel";
+            modelPanel.Size = new System.Drawing.Size(118, 293);
+            modelPanel.TabIndex = 10;
+            // 
+            // label6
+            // 
+            label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            label6.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            label6.Location = new System.Drawing.Point(375, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(118, 39);
+            label6.TabIndex = 9;
+            label6.Text = "Модель";
+            label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            label4.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            label4.Location = new System.Drawing.Point(499, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(122, 39);
+            label4.TabIndex = 8;
+            label4.Text = "Дополнительное\r\nоборудование";
+            label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // checkedListBox2
             // 
             checkedListBox2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,30 +149,19 @@
             checkedListBox2.FormattingEnabled = true;
             checkedListBox2.HorizontalScrollbar = true;
             checkedListBox2.Items.AddRange(new object[] { "дуб", "береза", "ель", "сосна", "лиственница" });
-            checkedListBox2.Location = new System.Drawing.Point(315, 42);
+            checkedListBox2.Location = new System.Drawing.Point(251, 42);
             checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new System.Drawing.Size(150, 293);
+            checkedListBox2.Size = new System.Drawing.Size(118, 293);
             checkedListBox2.TabIndex = 6;
             checkedListBox2.ItemCheck += checkedListBox2_ItemCheck;
-            // 
-            // label4
-            // 
-            label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            label4.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            label4.Location = new System.Drawing.Point(471, 0);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(150, 39);
-            label4.TabIndex = 4;
-            label4.Text = "Дополнительное\r\nоборудование";
-            label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             label3.Dock = System.Windows.Forms.DockStyle.Fill;
             label3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            label3.Location = new System.Drawing.Point(315, 0);
+            label3.Location = new System.Drawing.Point(251, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(150, 39);
+            label3.Size = new System.Drawing.Size(118, 39);
             label3.TabIndex = 3;
             label3.Text = "Материалы";
             label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -145,9 +170,9 @@
             // 
             label1.Dock = System.Windows.Forms.DockStyle.Fill;
             label1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            label1.Location = new System.Drawing.Point(159, 0);
+            label1.Location = new System.Drawing.Point(127, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(150, 39);
+            label1.Size = new System.Drawing.Size(118, 39);
             label1.TabIndex = 2;
             label1.Text = "цвет";
             label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,7 +183,7 @@
             label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
             label2.Location = new System.Drawing.Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(150, 39);
+            label2.Size = new System.Drawing.Size(118, 39);
             label2.TabIndex = 1;
             label2.Text = "Асортимент";
             label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -172,7 +197,7 @@
             checkedListBox1.Items.AddRange(new object[] { "Стандартные модели", "Модели эконом класса", "Модели класса Люкс", "Стандартная комплектация" });
             checkedListBox1.Location = new System.Drawing.Point(3, 42);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new System.Drawing.Size(150, 293);
+            checkedListBox1.Size = new System.Drawing.Size(118, 293);
             checkedListBox1.TabIndex = 0;
             checkedListBox1.ItemCheck += CheckedListBox_OneItemCheck;
             // 
@@ -181,7 +206,7 @@
             treeView1.CheckBoxes = true;
             treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             treeView1.Font = new System.Drawing.Font("Arial Narrow", 14.1428576F);
-            treeView1.Location = new System.Drawing.Point(159, 42);
+            treeView1.Location = new System.Drawing.Point(127, 42);
             treeView1.Name = "treeView1";
             treeNode1.BackColor = System.Drawing.Color.Brown;
             treeNode1.Name = "Узел0_1";
@@ -222,7 +247,7 @@
             treeNode13.Name = "Узел1";
             treeNode13.Text = "Другие цвета";
             treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] { treeNode7, treeNode13 });
-            treeView1.Size = new System.Drawing.Size(150, 293);
+            treeView1.Size = new System.Drawing.Size(118, 293);
             treeView1.TabIndex = 5;
             treeView1.AfterCheck += treeView1_AfterCheck;
             // 
@@ -230,9 +255,9 @@
             // 
             addEquipPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             addEquipPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            addEquipPanel.Location = new System.Drawing.Point(471, 42);
+            addEquipPanel.Location = new System.Drawing.Point(499, 42);
             addEquipPanel.Name = "addEquipPanel";
-            addEquipPanel.Size = new System.Drawing.Size(150, 293);
+            addEquipPanel.Size = new System.Drawing.Size(122, 293);
             addEquipPanel.TabIndex = 7;
             // 
             // flowLayoutPanel1
@@ -243,17 +268,17 @@
             flowLayoutPanel1.Size = new System.Drawing.Size(624, 70);
             flowLayoutPanel1.TabIndex = 2;
             // 
-            // label5
+            // orderNumLabel
             // 
-            label5.AutoSize = true;
-            label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            label5.Font = new System.Drawing.Font("Arial Narrow", 15.8571434F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
-            label5.Location = new System.Drawing.Point(3, 0);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(624, 56);
-            label5.TabIndex = 3;
-            label5.Text = "Заказ № 0001";
-            label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            orderNumLabel.AutoSize = true;
+            orderNumLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            orderNumLabel.Font = new System.Drawing.Font("Arial Narrow", 15.8571434F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
+            orderNumLabel.Location = new System.Drawing.Point(3, 0);
+            orderNumLabel.Name = "orderNumLabel";
+            orderNumLabel.Size = new System.Drawing.Size(624, 56);
+            orderNumLabel.TabIndex = 3;
+            orderNumLabel.Text = "Заказ № ";
+            orderNumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // startOrderButton
             // 
@@ -265,16 +290,6 @@
             startOrderButton.Text = "Начать выполнять заказ";
             startOrderButton.UseVisualStyleBackColor = true;
             startOrderButton.Click += startOrderButton_Click;
-            // 
-            // OrderlistBox
-            // 
-            OrderlistBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            OrderlistBox.FormattingEnabled = true;
-            OrderlistBox.HorizontalScrollbar = true;
-            OrderlistBox.Location = new System.Drawing.Point(633, 59);
-            OrderlistBox.Name = "OrderlistBox";
-            OrderlistBox.Size = new System.Drawing.Size(152, 338);
-            OrderlistBox.TabIndex = 5;
             // 
             // StatusTextBox
             // 
@@ -289,6 +304,16 @@
             StatusTextBox.TabIndex = 6;
             StatusTextBox.Text = "Статус заказа\r\nРаботы не начаты";
             StatusTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // OrderlistBox
+            // 
+            OrderlistBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            OrderlistBox.FormattingEnabled = true;
+            OrderlistBox.HorizontalScrollbar = true;
+            OrderlistBox.Location = new System.Drawing.Point(633, 59);
+            OrderlistBox.Name = "OrderlistBox";
+            OrderlistBox.Size = new System.Drawing.Size(152, 338);
+            OrderlistBox.TabIndex = 5;
             // 
             // OrderForm
             // 
@@ -312,16 +337,18 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Panel addEquipPanel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label orderNumLabel;
         private System.Windows.Forms.Button startOrderButton;
-        private System.Windows.Forms.ListBox OrderlistBox;
         private System.Windows.Forms.TextBox StatusTextBox;
+        private System.Windows.Forms.Panel modelPanel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox OrderlistBox;
     }
 }
